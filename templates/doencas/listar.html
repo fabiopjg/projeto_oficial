@@ -1,0 +1,70 @@
+{% extends '_base.html' %}
+
+{% load bootstrap %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Doenças</h4>
+                   
+                
+            
+                <div class="text-right mr-3">
+                        <a href="/doencas/criar">
+                            
+                            <button type="button" class="btn mb-1 btn-info">
+                                Adicionar <span class="btn-icon-right"><i class="fa fa-plus"></i></span>
+                            </button>
+                        </a>
+                    </div>
+            
+
+                <div class="table-responsive">
+                    <table class="table header-border">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if doencas %}
+                            {% for d in doencas %}
+                            <tr>
+                                <td> <a href="/doencas/{{ d.id }}">{{ d.nome }}</a> </td>
+                                  
+                                <td>
+                                    <a href="/doencas/editar/{{ d.id }}">
+                                        <button type="button" class="btn mb-1 btn-primary">
+                                            Editar <span class="btn-icon-right"> <i class="fa fa-edit"></i> </span>
+                                        </button>
+                                    </a>
+                                </td>
+                                
+                                <td> <a href="/doencas/excluir/{{ d.id }}">
+                                        <button type="button" class="btn mb-1 btn-danger">
+                                            Excluir <span class="btn-icon-right"> <i class="fa fa-close"></i> </span>
+                                        </button>
+                                    </a>
+                                </td>
+                        
+                            </tr>
+                            {% endfor %}
+                            {% else %}
+
+                            <tr>
+                                <td>Não foram encontradas nenhuma doença.</td>
+                            </tr>
+                            {% endif %}
+                            
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Detalhes da doença</h2>
+                
+                <h3> Nome </h3>
+                {{ doenca.nome }}
+
+                <h3>Sintomas</h3>
+                {{doenca.sintomas}}
+
+                <h3>Tratamentos</h3>
+                {{doenca.tratamentos}}
+
+                <h3>Medicamentos</h3>
+                {{doenca.medicamentos}}
+
+                <h3>Como evitar?</h3>
+                {{doenca.evitar}}
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

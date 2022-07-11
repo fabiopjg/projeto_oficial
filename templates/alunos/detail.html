@@ -1,0 +1,49 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title">Detalhes do aluno</h2>
+                
+                <h3> Nome </h3>
+                {{ aluno.user.first_name }}
+
+                <h3>Sobrenome</h3>
+                {{ aluno.user.last_name }}
+
+                <h3>Email</h3>
+                {{aluno.user.email}}
+
+                <h3>Gênero</h3>
+                {{aluno.user.get_genero_display }}
+
+                <h3>Telefone</h3>
+                {{aluno.user.telefone}}
+
+                <h3>Matrícula</h3>
+                {{aluno.matricula}}
+
+                <h3>Idade</h3>
+                {{aluno.idade}}
+
+                <h3>Turma</h3>
+                {{aluno.turma}}
+
+                <h3>Patologias</h3>
+                {{aluno.patologias}}
+
+                <h3>Nome do Responsável</h3>
+                {{aluno.nome_responsavel}}
+
+                <h3>Número do Responsável</h3>
+                {{aluno.tel_responsavel}}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
